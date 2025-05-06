@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Feedback</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/feedback.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            
+        </ul>
+    </nav>
+
+    <!-- Feedback Form -->
+    <h1>Send Feedback</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="feedback" placeholder="Write your feedback here..." rows="5" style="width: 100%;"></textarea><br>
+        <button type="submit">Send Feedback</button>
+    </form>
+
+    <!-- Messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/predict1.css' %}">
+</head>
+<body>
+    <h2>Predict Diabetes</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label >Pregnancies:</label><input placeholder="0" type="number" name="Pregnancies" step="any" required><br>
+        <label >Glucose:</label><input placeholder="0" type="number" name="Glucose" step="any" required><br>
+        <label >BloodPressure:</label><input placeholder="0" type="number" name="BloodPressure" step="any" required><br>
+        <label >SkinThickness:</label><input placeholder="0" type="number" name="SkinThickness" step="any" required><br>
+        <label >Insulin:</label><input placeholder="0" type="number" name="Insulin" step="any" required><br>
+        <label >BMI:</label><input placeholder="0" type="number" name="BMI" step="any" required><br>
+        <label >DiabetesPedigreeFunction:</label><input placeholder="0" type="number" name="DiabetesPedigreeFunction" step="any" required><br>
+        <label >Age:</label><input placeholder="0" type="number" name="Age" step="any" required><br>
+        <button placeholder="0" type="submit">Predict</button>
+    </form>
+    {% if result %}
+        <h3>Result: {{ result }}</h3>
+    {% endif %}
+    <a href="/">Back to Home</a>
+    <br>
+    <a href="/logout/">Logout</a>  <!-- Add this logout link -->
+</body>
+</html>

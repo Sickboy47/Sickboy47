@@ -1,0 +1,121 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    color: blue;
+    background:grey;
+    font-family: 'Arial', sans-serif;
+    position: relative; /* Required for positioning the pseudo-element */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    animation: fadeIn 1s; /* Fade-in animation for the body */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/static/images/predict.png"); /* Colorful gradient background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8; /* Adjust the opacity here (0.0 to 1.0) */
+    z-index: -1; /* Keeps the background behind other content */
+}
+
+h2 {
+    text-align: center;
+    color: #4510f3;
+}
+
+form {
+    background-color: rgba(188, 7, 233, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #eaf20cd3;
+}
+
+input::placeholder {
+    color: #ff0000; /* Change this to your desired color */
+    opacity: 0.6; /* Ensure full visibility (optional) */
+}
+
+input[type="number"] {
+    color: white;
+    background: grey;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc00;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+h3 {
+    text-align: center;
+    color: #fafafa;
+    
+}
+
+/* Logout link positioned in the top-right corner */
+a[href="/logout/"] {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgb(234, 227, 227);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #f44336; /* Add a background color for better visibility */
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+a[href="/logout/"]:hover {
+    background-color: #d32f2f; /* Darker shade for hover */
+}
+
+/* Back to Home link positioned in the top-left corner */
+a[href="/"] {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #4caf50; /* Add a background color for better visibility */
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+a[href="/"]:hover {
+    background-color: #388e3c; /* Darker shade for hover */
+}

@@ -1,0 +1,215 @@
+/* General body styling */
+body {
+    font-size: 1.2rem;
+    position: relative;
+    margin-top: 15px;
+    height: 100vh;
+    background-color: #efe7e752; /* Fallback background color */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/static/images/home.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.3; /* Adjust the opacity here (0.0 to 1.0) */
+    z-index: -1; /* Ensures the background stays behind other content */
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    justify-content: center;
+    margin-top: 60px;
+    font-size: 2.5rem;
+    color: #0047ab;
+}
+
+/* Navigation bar styling (transparent background) */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width for positioning */
+    background-color: transparent; /* Makes the navigation bar background invisible */
+    z-index: 1000;
+    padding: 10px 0; /* Adds padding for spacing */
+    display: flex;
+    justify-content: center; /* Centers the button links horizontally */
+}
+
+/* Navigation bar styling */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: hsla(240, 29%, 92%, 0.055);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    z-index: 1000;
+}
+
+/* Ensure content starts below the nav bar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header, section, footer {
+    margin-top: 60px; /* Adjust based on the height of your nav bar */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    height: 40px; /* Set the height of the nav bar */
+    align-items: center; /* Vertically center the nav links */
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(46, 16, 215);
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #0056cc;
+    color:white;
+}
+
+/* Ensure content starts below the nav bar */
+header, section, footer {
+    margin-top: 50px; /* Push content below the nav bar height */
+    overflow: hidden; /* Hide any content exceeding this section */
+}
+
+/* Active link effect */
+nav ul li a:active {
+    background-color: rgba(0, 51, 102, 0.9); /* Slightly darker for active state */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow for active state */
+    transform: scale(0.95); /* Shrinks slightly on click */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul { /* Stack links vertically on smaller screens */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Adds vertical spacing between links */
+    }
+}
+
+
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(45deg, #003366d1, #0066ccda, #3399ffd9); /* Gradient colors */
+    background-size: 400% 400%; /* Allows for a smooth animation transition */
+    animation: gradientTransition 10s ease infinite; /* Infinite animation for transition */
+    color: #ffffff; /* White text for contrast */
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Gradient animation */
+@keyframes gradientTransition {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Footer container layout */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap; /* Wrap sections on smaller screens */
+}
+
+/* Section styling within footer */
+footer section {
+    flex: 1; /* Equal width for sections */
+    padding: 20px;
+    min-width: 300px; /* Prevent sections from becoming too narrow */
+    text-align: left; /* Align text to the left */
+    font-family: 'Arial', sans-serif; /* Consistent font-family */
+    font-size: 1rem;
+    color: #e6f7ff; /* Light blue for text readability */
+    line-height: 1.5;
+}
+
+/* Footer section headings */
+footer h2 {
+    font-size: 1.8rem;
+    color: #ffcc00; /* Gold color for section headings */
+    margin-bottom: 10px;
+}
+
+/* Footer unordered lists */
+footer ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 20px 0;
+}
+
+footer ul li {
+    margin: 10px 0;
+    color: #d6e6ff; /* Light bluish text for list items */
+}
+
+/* Footer links */
+footer a {
+    color: #ffcc00; /* Gold color for links */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+footer a:hover {
+    color: #ffa500; /* Bright gold on hover */
+}
+
+/* Footer copyright text */
+footer p:last-child {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: white; /* Slightly lighter for copyright text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+    }
+
+    footer section {
+        text-align: center; /* Center-align content on smaller screens */
+    }
+}

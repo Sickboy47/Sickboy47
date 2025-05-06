@@ -1,0 +1,133 @@
+/* log2.css */
+
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    color: blue;
+    background:grey;
+    font-family: 'Arial', sans-serif;
+    position: relative; /* Required for positioning the pseudo-element */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements horizontally */
+    animation: fadeIn 1s; /* Fade-in animation for the body */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/static/images/login.png"); /* Colorful gradient background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5; /* Adjust the opacity here (0.0 to 1.0) */
+    z-index: -1; /* Keeps the background behind other content */
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.login-title {
+    margin-top: 20px; /* Space from the top */
+    font-size: 2.5em; /* Larger font size */
+    animation: slideDown 0.5s ease; /* Slide down animation for the title */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.container {
+    text-align: center; /* Center text inside the container */
+    margin-top: 20px; /* Space below the title */
+    background-color: rgba(20, 248, 35, 0); /* Slightly transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 30px; /* Padding around the form */
+    box-shadow: 0 4px 20px rgba(50, 41, 41, 0.77); /* Shadow for depth */
+    animation: fadeIn 0.5s ease; /* Fade-in animation for the container */
+}
+
+#form {
+    width: 300px; /* Fixed width for the form */
+    z-index: 1;
+    opacity: 1;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(50, 41, 41, 0.77); /* Shadow for depth */
+    
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1a24dadd;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #141111ac; /* Colorful border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #feb47b0f; /* Change border color on focus */
+    outline: none;
+}
+
+button {
+    background-color: #400ee2; /* Colorful button */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s; /* Transition for button */
+}
+
+button:hover {
+    background-color: #1d7be7; /* Change button color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #ea0b0b; /* Colorful link */
+    text-decoration: none;
+    transition: color 0.3s; /* Transition for link color */
+}
+
+a:hover {
+    color: #0707ff; /* Change link color on hover */
+    text-decoration: underline;
+    font-size: 20px;
+    transition: 0.3s;
+}
+

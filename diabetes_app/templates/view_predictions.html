@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predictions Records</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}">
+</head>
+<body>
+    <h1>All Predictions</h1>
+    <table border="1">
+        <tr>
+            <th>User</th>
+            <th>Glucose</th>
+            <th>Blood Pressure</th>
+            <th>BMI</th>
+            <th>Result</th>
+            <th>Date</th>
+        </tr>
+        {% for prediction in predictions %}
+        <tr>
+            <td>{{ prediction.user.username|default:"Anonymous" }}</td>
+            <td>{{ prediction.glucose }}</td>
+            <td>{{ prediction.blood_pressure }}</td>
+            <td>{{ prediction.bmi }}</td>
+            <td>{{ prediction.result }}</td>
+            <td>{{ prediction.date_created }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Back to Home</a>
+</body>
+</html>

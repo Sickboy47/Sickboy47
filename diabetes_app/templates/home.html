@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home | Diabetes Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/homee.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/login/">Login 🔐</a></li> |
+            <li>
+                {% if user.is_authenticated %}
+                    <a href="/predict/">Predict Diabetes 🩺</a>
+                {% else %}
+                    <a href="/login/">Predict Diabetes 🩺</a>
+                {% endif %}
+            </li> |
+            <li><a href="#footer">About Us</a></li> |
+            <li><a href="#footer">Contact Us</a></li> |
+           
+        </ul>
+    </nav>
+
+    <!-- Welcome Section -->
+    <header>
+        <h1>Welcome to Diabetes Predictor</h1>
+        <p>Your trusted partner in proactive healthcare, powered by GuY Company Ltd.</p>
+    </header>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" style="text-align: center; margin: 40px auto; max-width: 800px;">
+        <h2>How It Works</h2>
+        <ol style="text-align: left; margin: auto; max-width: 600px;">
+            <li>Log in to your account or create a new one.</li>
+            <li>Enter your health data, including glucose levels, BMI, and more.</li>
+            <li>Receive an instant result and personalized recommendations.</li>
+            <li>Take the first step towards proactive healthcare management!</li>
+        </ol>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <!-- About Us Section -->
+            <section id="about-us">
+                <h2>About Us</h2>
+                <p>
+                    At Diabetes Predictor, our mission is to empower individuals by providing a simple, accurate, and 
+                    efficient way to assess the likelihood of developing diabetes. Using advanced machine learning 
+                    algorithms, our platform analyzes health data to deliver insights that can help users take proactive 
+                    steps towards a healthier future. Operated by GuY Company Ltd., we are committed to promoting health 
+                    awareness and enabling users to make informed lifestyle choices.
+                </p>
+            </section>
+
+            <!-- Why Choose Us Section -->
+            <section id="why-choose-us">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li>✔ Accurate Predictions Powered by Machine Learning</li>
+                    <li>✔ User-Friendly Interface for Easy Access</li>
+                    <li>✔ Backed by GuY Company Ltd., a Leader in HealthTech</li>
+                    <li>✔ Secure and Confidential Data Processing</li>
+                    <li>✔ Continuous Support and Updates</li>
+                </ul>
+            </section>
+
+            <!-- Contact Us Section -->
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Have questions or feedback? Reach out to us!</p>
+                <p>Email: support@guycompany.com | Phone: +1 123-456-7890</p>
+                <p>Follow us on social media: 
+                    <a href="#">Facebook</a> | 
+                    <a href="#">Twitter</a> | 
+                    <a href="#">Instagram</a>
+                </p>
+           
+
+            <li><a href="{% url 'send_feedback' %}">Send Feedback</a></li>
+        </section>
+        </div>
+        <p>&copy; 2025 GuY Company Ltd. All rights reserved.</p>
+     
+    </footer>
+</body>
+</html>
